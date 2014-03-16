@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+  <package name="message" extends="role-default" namespace="/csms/message">
+     <action name="list" class="categoryAction" method="list">
+      <result>/luokou/category/listContent.jsp</result>
+    </action>
+    <action name="listTree" class="categoryAction" method="listTree">
+      <result>/luokou/category/treeContent.jsp</result>
+    </action>
+    <action name="listPagination" class="categoryAction" method="listPagination">
+      <result>/luokou/category/tableContent.jsp</result>
+    </action>
+    <action name="toSave" class="categoryAction" method="toSave">
+      <result>/luokou/category/saveContent.jsp</result>
+    </action>
+    <action name="save" class="categoryAction" method="save">
+      <result>/share/done.jsp</result>
+    </action>
+    <action name="toUpdate" class="categoryAction" method="toUpdate">
+      <result>/luokou/category/updateContent.jsp</result>
+    </action>
+    <action name="update" class="categoryAction" method="update">
+      <result>/share/done.jsp</result>
+    </action>
+    <action name="delete" class="categoryAction" method="delete">
+      <result type="chain">listPagination</result>
+    </action>
+  </package>
+</struts>

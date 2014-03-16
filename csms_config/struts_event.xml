@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+  <package name="event" extends="role-default" namespace="/csms/event">
+     <action name="list" class="eventAction" method="list">
+      <result>/luokou/event/listContent.jsp</result>
+    </action>
+    <action name="listTree" class="eventAction" method="listTree">
+      <result>/luokou/event/treeContent.jsp</result>
+    </action>
+    <action name="listPagination" class="eventAction" method="listPagination">
+      <result>/luokou/event/tableContent.jsp</result>
+    </action>
+    <action name="toSave" class="eventAction" method="toSave">
+      <result>/luokou/event/saveContent.jsp</result>
+    </action>
+    <action name="toView" class="eventAction" method="toView">
+      <result>/luokou/event/viewContent.jsp</result>
+    </action>
+    <action name="save" class="eventAction" method="save">
+      <result>/share/done.jsp</result>
+    </action>
+    <action name="toUpdate" class="eventAction" method="toUpdate">
+      <result>/luokou/event/updateContent.jsp</result>
+    </action>
+    <action name="update" class="eventAction" method="update">
+      <result>/share/done.jsp</result>
+    </action>
+    <action name="delete" class="eventAction" method="delete">
+      <result type="chain">listPagination</result>
+    </action>
+  </package>
+</struts>

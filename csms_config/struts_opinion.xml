@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+  <package name="opinion" extends="role-default" namespace="/csms/opinion">
+     <action name="list" class="opinionAction" method="list">
+      <result>/luokou/opinion/listContent.jsp</result>
+    </action>
+    <action name="listTree" class="opinionAction" method="listTree">
+      <result>/luokou/opinion/treeContent.jsp</result>
+    </action>
+    <action name="listPagination" class="opinionAction" method="listPagination">
+      <result>/luokou/opinion/tableContent.jsp</result>
+    </action>
+    <action name="toSave" class="opinionAction" method="toSave">
+      <result>/luokou/opinion/saveContent.jsp</result>
+    </action>
+    <action name="save" class="opinionAction" method="save">
+      <result>/share/done.jsp</result>
+    </action>
+    <action name="toUpdate" class="opinionAction" method="toUpdate">
+      <result>/luokou/opinion/updateContent.jsp</result>
+    </action>
+    <action name="update" class="opinionAction" method="update">
+      <result>/share/done.jsp</result>
+    </action>
+    <action name="delete" class="opinionAction" method="delete">
+      <result type="chain">listPagination</result>
+    </action>
+  </package>
+</struts>

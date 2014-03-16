@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+  <package name="kpi" extends="role-default" namespace="/csms/kpi">
+     <action name="list" class="kpiAction" method="list">
+      <result>/luokou/kpi/listContent.jsp</result>
+    </action>
+    <action name="listTree" class="kpiAction" method="listTree">
+      <result>/luokou/kpi/treeContent.jsp</result>
+    </action>
+    <action name="listPagination" class="kpiAction" method="listPagination">
+      <result>/luokou/kpi/tableContent.jsp</result>
+    </action>
+    <action name="toSave" class="kpiAction" method="toSave">
+      <result>/luokou/kpi/saveContent.jsp</result>
+    </action>
+    <action name="save" class="kpiAction" method="save">
+      <result>/share/done.jsp</result>
+    </action>
+    <action name="toUpdate" class="kpiAction" method="toUpdate">
+      <result>/luokou/kpi/updateContent.jsp</result>
+    </action>
+    <action name="update" class="kpiAction" method="update">
+      <result>/share/done.jsp</result>
+    </action>
+    <action name="delete" class="kpiAction" method="delete">
+      <result type="chain">listPagination</result>
+    </action>
+  </package>
+</struts>
