@@ -28,5 +28,8 @@
     <action name="delete" class="imageAction" method="delete">
       <result type="chain">listPagination</result>
     </action>
+    <action name="export" class="imageAction" method="exportJSON">
+      <result>/share/done.jsp</result>
+    </action>
   </package>
 </struts>

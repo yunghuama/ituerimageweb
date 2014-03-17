@@ -62,6 +62,10 @@ public class CategoryService implements IService {
     	return contentDAO.findAll(CSMSSQLConstant.CATEGORY_SELECT_ALL_SQL);
     }
     
+    public List<Category> findBySuperId(String superId){
+    	return contentDAO.findAll(CSMSSQLConstant.CATEGORY_SELECT_BY_PAGE_SQL,new String[]{superId});
+    }
+    
     /**
      * 新建内容
      * 

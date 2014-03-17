@@ -51,6 +51,10 @@ public class ImageService implements IService {
         return contentDAO.find(CSMSSQLConstant.IMAGE_SELECT_BY_ID,new String[]{id});
     }
     
+    public List<Image> findByTag(String tag) throws Exception {
+        return contentDAO.findAll(CSMSSQLConstant.IMAGE_SELECT_BY_PAGE_TAG_SQL ,new Object[]{"%"+tag+"%"});
+    }
+    
 
     public List<Image> findAll(){
     	return contentDAO.findAll(CSMSSQLConstant.IMAGE_SELECT_ALL_SQL);

@@ -119,7 +119,8 @@ String path = request.getContextPath();
               b: '0px -120px'
             },
             handler:function(){
-              $("#listForm").attr("action","<%=path%>/csms/image/exportJSON.v");
+              $("#listForm").attr("action","<%=path%>/csms/image/export.v");
+              $("#listForm").submit();
             }
           }]
       });

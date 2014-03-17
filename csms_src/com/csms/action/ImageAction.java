@@ -2,6 +2,7 @@ package com.csms.action;
 
 import java.awt.image.BufferedImage;
 import java.io.File;
+import java.io.FileWriter;
 import java.io.InputStream;
 import java.util.List;
 import java.util.Properties;
@@ -16,8 +17,6 @@ import com.csms.domain.Category;
 import com.csms.domain.Image;
 import com.csms.service.CategoryService;
 import com.csms.service.ImageService;
-import com.drew.imaging.jpeg.JpegMetadataReader;
-import com.drew.metadata.Metadata;
 import com.platform.domain.AttachedFile;
 import com.platform.util.UploadHelper;
 import com.platform.web.action.GenericAction;
@@ -152,13 +151,58 @@ public class ImageAction extends GenericAction<Image> {
         return SUCCESS;
     }
     
-    public void exportJSON() throws Exception{
-    	InputStream is = this.getClass().getClassLoader().getResourceAsStream("ituer.properties");
-		Properties pp = new Properties();
-		pp.load(is);
-		String path = pp.getProperty("basepath");
-    	
-		
+    public String exportJSON() throws Exception{
+//    	try{
+//    	InputStream is = this.getClass().getClassLoader().getResourceAsStream("ituer.properties");
+//		Properties pp = new Properties();
+//		pp.load(is);
+//		String path = pp.getProperty("basepath");
+//		File file = new File(path + "json");
+//		if(!file.exists()){
+//			file.mkdirs();
+//		}
+//		//查询所有的类别
+//		categoryList = categoryService.findAll();
+//		for(Category cate : categoryList){
+//			//获得类别文件名
+//			String categoryName = cate.getEnName();
+//			//创建类别文件
+//			File categoryFile = new File(file.getAbsoluteFile()+"/"+categoryName+ ".json");
+//			if(!categoryFile.exists()){
+//				categoryFile.createNewFile();
+//			}
+//			//查询子类别
+//			List<Category> childCategoryList = categoryService.findBySuperId(cate.getId());
+//			FileWriter writer = new FileWriter(categoryFile);
+//			if(childCategoryList!=null&&childCategoryList.size()>0){
+//				for(Category childCategory : childCategoryList){
+////					JSONObject object = new JSONObject();
+////					object.put("name", childCategory.getName());
+////					String prefix = getCategoryPath(childCategory.getId(),"");
+////					object.put("image", "http://ituer.qiniudn.com/image/"+prefix+ "+"+childCategory.getName()+".jpg");
+////					object.put("url", "http://ituer.qiniudn.com/data/"+prefix+ "+"+childCategory.getName()+".json");
+////					object.put("type", "0");
+////					writer.write(object.toString());
+//				}
+//			}
+//			//查询图片
+//			List<Image> childImageList = imageService.findByTag(cate.getEnName());
+//			if(childImageList!=null && childImageList.size()>0){
+//				for(Image childImage : childImageList){
+////					JSONObject object = new JSONObject();
+////					String prefix = getCategoryPath(childImage.getId(),"");
+////					object.put("name", childImage.getName());
+////					object.put("title", childImage.getTitle());
+////					object.put("url", "http://ituer.qiniudn.com/image/"+prefix+childImage.getPath());
+////					writer.write(object.toString());
+//				}
+//			}
+//			writer.close();
+//		}
+//    	}catch(Exception e){
+//    		e.printStackTrace();
+//    	}
+		return SUCCESS;
     }
 
     /**
